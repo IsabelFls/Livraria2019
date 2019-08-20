@@ -12,8 +12,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -27,12 +29,23 @@ public class Livros implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String titulo;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date data;
     private Integer paginas;
+    @Lob
     private String sinopse;
     private String isbn;
     private String idioma;
-    private String foto;
+    private String foto1;
+    private String foto2;
+    private String foto3;
+    
+    @ManyToOne
+    private Genero genero;
+    @ManyToOne
+    private Editora editora;
+    @ManyToMany
+    private List<Autor> autores;
  
     public Long getId() {
         return id;
@@ -90,12 +103,4 @@ public class Livros implements Serializable {
         this.idioma = idioma;
     }
 
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
-    
 }

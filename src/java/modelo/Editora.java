@@ -7,10 +7,13 @@ package modelo;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -19,6 +22,9 @@ import javax.persistence.Id;
 @Entity
 public class Editora implements Serializable {
 
+    @OneToMany(mappedBy = "editora")
+    private List<Livros> livross;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,7 +32,9 @@ public class Editora implements Serializable {
     private String nome;
     private String endereco;
     private String logo;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date datafund;
+    private String telefone;
     
     public Long getId() {
         return id;
@@ -66,6 +74,14 @@ public class Editora implements Serializable {
 
     public void setDatafund(Date datafund) {
         this.datafund = datafund;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
     
 }
