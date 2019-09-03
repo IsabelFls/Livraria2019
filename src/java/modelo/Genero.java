@@ -21,7 +21,7 @@ import javax.persistence.OneToMany;
 public class Genero implements Serializable {
 
     @OneToMany(mappedBy = "genero")
-    private List<Livros> livross;
+    private List<Livro> livross;
 
     private static final long serialVersionUID = 1L;
     @Id

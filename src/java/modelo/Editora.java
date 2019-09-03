@@ -23,7 +23,7 @@ import javax.persistence.Temporal;
 public class Editora implements Serializable {
 
     @OneToMany(mappedBy = "editora")
-    private List<Livros> livross;
+    private List<Livro> livross;
 
     private static final long serialVersionUID = 1L;
     @Id

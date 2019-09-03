@@ -23,7 +23,7 @@ import javax.persistence.Temporal;
 public class Autor implements Serializable {
 
     @ManyToMany(mappedBy = "autores")
-    private List<Livros> livross;
+    private List<Livro> livross;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -75,11 +75,11 @@ public class Autor implements Serializable {
         this.foto = foto;
     }
 
-    public List<Livros> getLivross() {
+    public List<Livro> getLivross() {
         return livross;
     }
 
-    public void setLivross(List<Livros> livross) {
+    public void setLivross(List<Livro> livross) {
         this.livross = livross;
     }
     
