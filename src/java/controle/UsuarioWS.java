@@ -21,7 +21,30 @@ public class UsuarioWS extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    
+            String pagina;
+        String acao = request.getParameter("txtacao");
+        
+        
+        switch(String.valueOf(acao)){
+            case "add":
+                //abrir tela (talvez buscar dados)
+                
+                break;
+            case "edit":
+                //abrir tela 
+                
+                //buscar dados
+                
+                break;
+            case "del":
+                //excluir
+                
+                //buscar dados
+                break;
+            default:
+            //abrir tela
+            //listar objetos    
+        }
     }
 
     @Override
