@@ -11,20 +11,20 @@
                 <div class="col-md-3 pr-md-1">
                     <div class="form-group">
                         <label>Id</label>
-                        <input type="text" class="form-control" name="txtId" placeholder="Id" value="" readonly="true">
+                        <input type="text" class="form-control" name="txtid" placeholder="Id" value="" readonly="true">
                     </div>
                 </div>
                 <div class="col-md-5 pr-md-1">
                     <div class="form-group">
                         <label>Genero</label>
-                        <input type="text" class="form-control" name="txtGenero" placeholder="Genero" value="">
+                        <input type="text" class="form-control" name="txtnome" placeholder="Genero" value="">
                     </div>
                 </div>
             </div>
             <button class="btn btn-primary btn-round text-center" type="submit">
                 <i class="tim-icons icon-cloud-upload-94"></i> Salvar
             </button>
-            <a class="btn btn-primary btn-round text-center" href="GeneroWS?acao=list">
+            <a class="btn btn-primary btn-round text-center" href="GeneroWS?txtacao=list">
                 <i class="tim-icons icon-bullet-list-67"></i> Listar
             </a>
         </form>
