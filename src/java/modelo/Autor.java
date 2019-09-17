@@ -13,12 +13,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 
-/**
- *
- * @author isabe
- */
+@NamedQueries({
+    @NamedQuery(name= "Autor.findAll", query="SELECT a FROM Autor a"),
+    @NamedQuery(name="Autor.findFilter", query="SELECT a FROM Autor a WHERE a.nome LIKE :filtro")
+})
 @Entity
 public class Autor implements Serializable {
 

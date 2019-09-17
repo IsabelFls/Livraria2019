@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="pt-br">
 
 <head>
@@ -36,31 +38,31 @@
         </div>
         <ul class="nav">
           <li>
-            <a href="./../genero/GeneroWS?acao=list">
+            <a href="./../Genero/GeneroWS?txtacao=list">
               <i class="tim-icons icon-tag"></i>
               <p>Genero</p>
             </a>
           </li>
           <li>
-            <a href="./../autor/AutorWS?acao=list">
+            <a href="./../Autor/AutorWS?txtacao=list">
               <i class="tim-icons icon-tag"></i>
               <p>Autor</p>
             </a>
           </li>
           <li>
-            <a href="./../editora/EditoraWS?acao=list">
+            <a href="./../editora/EditoraWS?txtacao=list">
               <i class="tim-icons icon-tag"></i>
               <p>Editora</p>
             </a>
           </li>
           <li>
-            <a href="./../livro/LivroWS?acao=list">
+            <a href="./../livro/LivroWS?txtacao=list">
               <i class="tim-icons icon-tag"></i>
               <p>Livro</p>
             </a>
           </li>
           <li>
-            <a href="./../admin/AdminWS?acao=list">
+            <a href="./../admin/AdminWS?txtacao=list">
               <i class="tim-icons icon-tag"></i>
               <p>Admin</p>
             </a>
