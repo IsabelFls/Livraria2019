@@ -2,16 +2,16 @@
 <%@include file="../cabecalho.jsp" %>
 <div class="card">
     <div class="card-header">
-        <h5 class="title">Adiciona Genero</h5>
+        <h5 class="title">Editar autor</h5>
     </div>
     <div class="card-body">
         <!--MODIFICAR PARA ADD-->
-        <form action="GeneroWS" method="POST">
+        <form action="AutorWS" method="POST">
             <div class="row">
                 <div class="col-md-3 pr-md-1">
                     <div class="form-group">
                         <label>Id</label>
-                        <input type="text" class="form-control" name="txtid" placeholder="Id" value="" readonly="true">
+                        <input type="text" class="form-control" name="txtid" placeholder="Id" readonly="true" value="${obj.id}">
                     </div>
                 </div>
                 <div class="col-md-5 pr-md-1">
@@ -23,7 +23,7 @@
                 <div class="col-md-5 pr-md-1">
                     <div class="form-group">
                         <label>Data de nascimento</label>
-                        <input type="text" class="form-control" name="txtdatanasc" placeholder="Data de nascimento" value="${obj.datanasc}">
+                        <input type="date" class="form-control" name="txtdatanasc" placeholder="Data de nascimento" value="<fmt:formatDate value='${obj.datanasc}' pattern='yyyy-MM-dd'/>">
                     </div>
                 </div>
                 <div class="col-md-5 pr-md-1">
@@ -42,7 +42,7 @@
             <button class="btn btn-primary btn-round text-center" type="submit">
                 <i class="tim-icons icon-cloud-upload-94"></i> Salvar
             </button>
-            <a class="btn btn-primary btn-round text-center" href="GeneroWS?txtacao=list">
+            <a class="btn btn-primary btn-round text-center" href="AutorWS?txtacao=list">
                 <i class="tim-icons icon-bullet-list-67"></i> Listar
             </a>
         </form>

@@ -50,7 +50,7 @@
             </a>
           </li>
           <li>
-            <a href="./../editora/EditoraWS?txtacao=list">
+            <a href="./../Editora/EditoraWS?txtacao=list">
               <i class="tim-icons icon-tag"></i>
               <p>Editora</p>
             </a>

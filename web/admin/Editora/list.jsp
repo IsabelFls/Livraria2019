@@ -1,15 +1,16 @@
 
 <%@include file="../cabecalho.jsp" %>
+
 <div class="card ">
     <div class="card-header">
-        <h4 class="card-title">Autor</h4>
+        <h4 class="card-title">Genero</h4>
     </div>
     <div class="card-body">
         <a class="btn btn-primary btn-round text-center" href="add.jsp">
             <i class="tim-icons icon-simple-add"></i> Adiciona
         </a>
         <div class="table-responsive">
-            <table class="table tablesorter"  id="">
+            <table class="table tablesorter " id="">
                 <thead class=" text-primary">
                 <th>
                     ID
@@ -18,13 +19,16 @@
                     Nome
                 </th>
                 <th>
-                    Data de nacimento
+                    Endereço
                 </th>
                 <th>
-                    Nacionalidade
+                    Telefone
                 </th>
                 <th>
-                    Foto
+                    Data de fundação
+                </th>
+                <th>
+                    Logo
                 </th>
                 <th>
                     Edita
@@ -36,23 +40,24 @@
                 <tbody>
                     <c:forEach items="${lista}" var="obj">
                         <tr>
-                           <td>${obj.id}</td>
-                           <td>${obj.nome}</td>
-                           <td><fmt:formatDate value="${obj.datanasc}" pattern="dd/MM/yyyy"></fmt:formatDate></td>
-                           <td>${obj.nacionalidade}</td>
-                           <td><img src="../../arquivos/${obj.foto}" style="height: 40px;"></td>   
-                           <td>
-                                <a class="btn btn-info btn-fab btn-icon btn-round" href="AutorWS?txtacao=edit&txtid=${obj.id}">
+                            <td>${obj.id}</td>
+                            <td>${obj.nome}</td>
+                            <td>${obj.endereco}</td>
+                            <td>${obj.telefone}</td>
+                            <td><fmt:formatDate value="${obj.datafund}" pattern="dd/MM/yyyy"></fmt:formatDate></td>
+                            <td><img src="../../arquivos/${obj.logo}" style="height: 40px;"></td>   
+                            <td>
+                                <a class="btn btn-info btn-fab btn-icon btn-round" href="EditoraWS?txtacao=edit&txtid=${obj.id}">
                                     <i class="tim-icons icon-pencil"></i>
                                 </a>
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-fab btn-icon btn-round" href="AutorWS?txtacao=del&txtid=${obj.id}">
+                                <a class="btn btn-primary btn-fab btn-icon btn-round" href="EditoraWS?txtacao=del&txtid=${obj.id}">
                                     <i class="tim-icons icon-trash-simple"></i>
                                 </a>
                             </td>
                         </tr>
-                    </c:forEach>   
+                    </c:forEach>       
                 </tbody>
             </table>
         </div>

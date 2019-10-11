@@ -12,13 +12,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 
-/**
- *
- * @author isabe
- */
+@NamedQueries({
+    @NamedQuery(name= "Editora.findAll", query="SELECT e FROM Editora e"),
+    @NamedQuery(name="Editora.findFilter", query="SELECT e FROM Editora e WHERE e.nome LIKE :filtro")
+})
 @Entity
 public class Editora implements Serializable {
 
@@ -83,5 +85,4 @@ public class Editora implements Serializable {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    
 }

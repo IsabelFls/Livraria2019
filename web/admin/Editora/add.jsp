@@ -1,28 +1,32 @@
 <%@include file="../cabecalho.jsp" %>
 <div class="card">
     <div class="card-header">
-        <h5 class="title">Adiciona Autor</h5>
+        <h5 class="title">Adiciona Editora</h5>
     </div>
     <div class="card-body">
         <!--MODIFICAR PARA ADD-->
-        <form action="AutorWS" method="POST">
+        <form action="EditoraWS" method="POST">
             <div class="row">
                 <div class="col-md-5 pr-md-1">
                     <div class="form-group">
                         <label>Nome</label>
                         <input type="text" name="txtnome" required class="form-control" placeholder="Nome" >
                     </div>
-                    <div class="form-group">
-                        <label>Data de nascimento</label>
-                        <input type="date" name="txtdatanasc" required class="form-control" placeholder="Data de nascimento" >
+                    <div>
+                        <label>Endereço</label>
+                        <input type="text" name="txtendereco" required class="form-control" placeholder="Endereço" >
                     </div>
-                    <div class="form-group">
-                        <label>Nacionalidade</label>
-                        <input type="text" name="txtnacionalidade" required class="form-control" placeholder="Nacionalidade" >
+                    <div>
+                        <label>Data de fundação</label>
+                        <input type="date" name="txtdatafund" required class="form-control" placeholder="Data de fundação" >
                     </div>
-                    <div class="form-group-file">
-                        <label>Foto</label>
-                        <input type="file" name="txtfoto" required class="form-control form-control-file" placeholder="Foto" >
+                    <div>
+                        <label>Telefone</label>
+                        <input type="text" name="txttelefone" required class="form-control" placeholder="Telefone" >
+                    </div>
+                    <div>
+                        <label>Logo</label>
+                        <input type="text" name="txtlogo" required class="form-control" placeholder="Logo" >
                     </div>
                 </div>
             </div>
@@ -30,7 +34,7 @@
             <button class="btn btn-primary btn-round text-center" type="submit">
                 <i class="tim-icons icon-cloud-upload-94"></i> Salvar
             </button> 
-            <a class="btn btn-primary btn-round text-center" href="AutorWS?txtacao=list">
+            <a class="btn btn-primary btn-round text-center" href="EditoraWS?txtacao=list">
                 <i class="tim-icons icon-bullet-list-67"></i> Listar
             </a>
         </form>
