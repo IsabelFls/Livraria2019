@@ -5,7 +5,8 @@
     </div>
     <div class="card-body">
         <!--MODIFICAR PARA ADD-->
-        <form action="EditoraWS" method="POST">
+        <form  action="UploadWS" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="urldestino" value="EditoraWS">
             <div class="row">
                 <div class="col-md-5 pr-md-1">
                     <div class="form-group">
