@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Genero;
 
-@WebServlet(name = "GeneroWS", urlPatterns = {"/admin/Genero/GeneroWS"})
+@WebServlet(name = "GeneroWS", urlPatterns = {"/admin/genero/GeneroWS"})
 public class GeneroWS extends HttpServlet {
 
     @Override

@@ -15,12 +15,14 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 
-/**
- *
- * @author isabe
- */
+@NamedQueries({
+    @NamedQuery(name= "Livro.findAll", query="SELECT l FROM Livro l"),
+    @NamedQuery(name="Livro.findFilter", query="SELECT l FROM Livro l WHERE l.titulo LIKE :filtro")
+})
 @Entity
 public class Livro implements Serializable {
 

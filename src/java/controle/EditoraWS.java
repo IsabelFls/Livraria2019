@@ -19,7 +19,7 @@ import util.FormataData;
  *
  * @author isabe
  */
-@WebServlet(name = "EditoraWS", urlPatterns = {"/admin/Editora/EditoraWS"})
+@WebServlet(name = "EditoraWS", urlPatterns = {"/admin/editora/EditoraWS"})
 public class EditoraWS extends HttpServlet {
 
     @Override

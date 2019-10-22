@@ -46,6 +46,7 @@ public class LivroWS extends HttpServlet {
             Boolean deucerto;
             String msg;
             List<Livro> livros;
+             RequestDispatcher destino;
             
             AutorDAO autordao= new AutorDAO();
             List<Autor> autores;
@@ -63,7 +64,7 @@ public class LivroWS extends HttpServlet {
                  //recebe lista de clientes
                 autordao = new AutorDAO();
                 autores = autordao.listar();
-                request.setAttribute("editoras", autores);
+                request.setAttribute("autores", autores);
                
                 editoradao= new EditoraDAO();
                 editoras= editoradao.listar();
@@ -71,7 +72,7 @@ public class LivroWS extends HttpServlet {
                 
                 generodao= new GeneroDAO();
                 generos= generodao.listar();
-                request.setAttribute("genros", generos);
+                request.setAttribute("generos", generos);
                 
                 pagina = "add.jsp"; 
                 
@@ -94,10 +95,10 @@ public class LivroWS extends HttpServlet {
                 id = Long.parseLong(request.getParameter("txtid"));
                 //busca ele no banco de dados pelo id
                 obj = dao.buscarPorChavePrimaria(id);
-                request.setAttribute("evento", obj);
+                request.setAttribute("livro", obj);
                 dao = new LivroDAO();
                 lista = dao.listar();
-                request.setAttribute("eventos", lista);
+                request.setAttribute("livros", lista);
                 pagina = "edit.jsp";
                             
                 break;
@@ -121,9 +122,31 @@ public class LivroWS extends HttpServlet {
                pagina= "list.jsp";
                 break;
             default:
-            //abrir tela
-            //listar objetos    
+           
+                //listar objetos
+                String filtro;
+            filtro = request.getParameter("txtfiltro");
+            
+            if(filtro == null){
+                //lista todos
+                livros= dao.listar();
+            }
+            else{
+                //lista com filtro
+                try {
+                livros= dao.listar(filtro);
+                } catch (Exception ex) {
+                    livros = dao.listar();
+                    msg= "Problema ao filtrar";
+                    request.setAttribute("ms", msg);
+                }
+            }
+            request.setAttribute("lista",livros);
+            pagina= "list.jsp";
+            break; 
         }
+            destino= request.getRequestDispatcher(pagina);
+        destino.forward(request,response);
     }
 
     @Override
@@ -164,9 +187,9 @@ public class LivroWS extends HttpServlet {
                 Long id_editora = Long.parseLong(request.getParameter("txteditora"));
                 EditoraDAO editoradao = new EditoraDAO();
                 Editora editora = editoradao.buscarPorChavePrimaria(id_editora);
-                
+             
                 //recebe ids que enviei no add
-                String[] ids_autores= request.getParameterValues("txtautores");
+                String[] ids_autores= request.getParameter("txtautores").split(";");
                 //cria lista em branco
                 List<Autor> autores = (List<Autor>) new ArrayList();;
                 //cria daos
@@ -189,6 +212,7 @@ public class LivroWS extends HttpServlet {
                 //cria um novo gênero
                 obj= new Livro();
             }
+            
             //colocar dados no obj
             obj.setTitulo(nome);
             obj.setData(datalanc);

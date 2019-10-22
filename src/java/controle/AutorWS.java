@@ -23,7 +23,7 @@ import util.FormataData;
  *
  * @author isabe
  */
-@WebServlet(name = "AutorWS", urlPatterns = {"/admin/Autor/AutorWS"})
+@WebServlet(name = "AutorWS", urlPatterns = {"/admin/autor/AutorWS"})
 public class AutorWS extends HttpServlet {
 
     @Override

@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author marcelosiedler
  */
-@WebServlet(urlPatterns = {"/admin/Autor/UploadWS", "/admin/Livro/UploadWS", "/admin/Editora/UploadWS"})
+@WebServlet(urlPatterns = {"/admin/autor/UploadWS", "/admin/livro/UploadWS", "/admin/editora/UploadWS"})
 public class UploadWS extends HttpServlet {
 
     /**
